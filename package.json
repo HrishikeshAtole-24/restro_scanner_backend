@@ -7,7 +7,7 @@
     "test1": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
-    "build": "node_modules/.bin/babel app.js -d dist",
+    "build": "npx babel app.js -d dist",
     "start": "node dist/app.js",
     "start2": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
