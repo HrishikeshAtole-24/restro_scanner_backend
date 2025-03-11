@@ -105,7 +105,9 @@ app.post('/restaurants', authenticateToken, async (req, res) => {
     const restaurantId = result.rows[0].id;
 
     // Generate a QR code that links to the restaurant's menu
-    const qrText = `http://localhost:${port}/menu/${restaurantId}`;
+    // const qrText = `http://localhost:${port}/menu/${restaurantId}`;
+    const qrText = `https://restro-scanner-backend.onrender.com/menu/${restaurantId}`;
+
     const qrDataURL = await QRCode.toDataURL(qrText);
     const base64Data = qrDataURL.split(',')[1];
     const qrBuffer = Buffer.from(base64Data, 'base64');
