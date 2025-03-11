@@ -11,7 +11,9 @@ const port = process.env.PORT || 3009;
 
 app.use(express.json());
 app.use(cors());
-
+app.get('', (req, res)=>{
+    res.send("server is running")
+})
 // Create a connection pool to your Neon PostgreSQL database using .env variables
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
